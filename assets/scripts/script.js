@@ -2,13 +2,15 @@ var showTitle = document.getElementById("fetch-api");
 //var tableBody = document.getElementById("fetch-results");
 //var container = document.getElementById("container");
 
+var entryForm = document.getElementById("entry_form");
+
 var entryCarMake = document.getElementById("input_make");
 var btnCarMake = document.getElementById("btn_make");
 
-var entryCarMake = document.getElementById("input_model");
+var entryCarModel = document.getElementById("input_model");
 var btnCarMake = document.getElementById("btn_model");
 
-var entryCarMake = document.getElementById("input_year");
+var entryCarYear = document.getElementById("input_year");
 var btnCarMake = document.getElementById("btn_year");
 
 
@@ -23,19 +25,29 @@ const gallery = [];
 var getCarName = function(event){
 event.preventDefault();
 var carName = entryCarMake.value.trim();
+var carModel = entryCarModel.value.trim();
+var carYear = entryCarYear.value.trim();
 
-if (carName === getImportMake){console.log("yes")}
+if (carName === getImportMake || carModel === getImportModel){
+    console.log("yes")}
 else {alert('Please enter a valid vegies')}
 }
 
 
-btnCarMake.addEventListener("click", getCarName);
+//btnCarMake.addEventListener("click", getCarName);
+entryForm.addEventListener("submit", getCarName);
 
 
-function getApi(){
-var requestUrl = 'https://api.github.com/users/tomato23d/repos'
-
-//'https://api.github.com/orgs/nodejs/repos'
+fetch('http://127.0.0.1:5501/assets/scripts/tyres.json')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)});
+        
+        
+    function getApi(){
+    var requestUrl = 'https://api.github.com/users/tomato23d/repos'
 
 
 fetch(requestUrl)
