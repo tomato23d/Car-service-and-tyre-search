@@ -1,17 +1,45 @@
-var showTitle = document.getElementById("fetch-title");
-var tableBody = document.getElementById("fetch-results");
-var container = document.getElementById("container");
-//var showImage = document.getElementById("fetch-image");
-//var printImage = document.getElementById("myimage");
+var showTitle = document.getElementById("fetch-api");
+//var tableBody = document.getElementById("fetch-results");
+//var container = document.getElementById("container");
+
+var entryCarMake = document.getElementById("input_make");
+var btnCarMake = document.getElementById("btn_make");
+
+var entryCarMake = document.getElementById("input_model");
+var btnCarMake = document.getElementById("btn_model");
+
+var entryCarMake = document.getElementById("input_year");
+var btnCarMake = document.getElementById("btn_year");
+
+
+var getImportMake = "vegies";
+var getImportModel = "sun";
+var getImportYear = "2020";
+
+
 
 const gallery = [];
 
+var getCarName = function(event){
+event.preventDefault();
+var carName = entryCarMake.value.trim();
+
+if (carName === getImportMake){console.log("yes")}
+else {alert('Please enter a valid vegies')}
+}
+
+
+btnCarMake.addEventListener("click", getCarName);
+
+
 function getApi(){
-var requestUrl = 'https://api.github.com/orgs/nodejs/repos'
+var requestUrl = 'https://api.github.com/users/tomato23d/repos'
+
+//'https://api.github.com/orgs/nodejs/repos'
 
 
 fetch(requestUrl)
-//fetch('http://127.0.0.1:5501/assets/scripts/database.json')
+
     .then(function(response){
         return response.json();
     })
