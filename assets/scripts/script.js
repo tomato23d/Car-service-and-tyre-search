@@ -12,35 +12,45 @@ var entryCarYear = document.getElementById("input_year");
 // var btnCarMake = document.getElementById("btn_year");
 
 var getCarName = function(event){
-event.preventDefault();
+    event.preventDefault();
+    var record = 0;
+    for (var i=0; i < carsTyres.length; i++){
 
-for (var i=0; i < carsTyres.length; i++){
+        var carName = entryCarMake.value.trim();
+        var carModel = entryCarModel.value.trim();
+        var carYear = Number(entryCarYear.value.trim());
 
-var carName = entryCarMake.value.trim();
-var carModel = entryCarModel.value.trim();
-var carYear = Number(entryCarYear.value.trim());
+        const formRecord = [];
+        const tyreRecord = [];
 
-const formRecord = [];
-const tyreRecord = [];
+        formRecord.push(carName, carModel, carYear);
+        tyreRecord.push(carsTyres[i].make, carsTyres[i].model, carsTyres[i].year);
 
-formRecord.push(carName, carModel, carYear);
-tyreRecord.push(carsTyres[i].make, carsTyres[i].model, carsTyres[i].year);
+        let carRecord = JSON.stringify(formRecord);
+        let tyreRecordJSON = JSON.stringify(tyreRecord);
 
+        if (carRecord === tyreRecordJSON){
+        var tyreR = carsTyres[i].tyre_measure;
+        record = record+1;
+        //console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
+        var h5 = document.createElement('h5');
+        h5.textContent = "Your tyre fit : " +tyreR;
+        container.appendChild(h5); 
+        //console.log(record);
+        }  
+    }  
+    console.log(record); noRecord(record);
+    return
+};
 
-let carRecord = JSON.stringify(formRecord);
-let tyreRecordJSON = JSON.stringify(tyreRecord);
-//console.log(carRecord);
-
-//console.log(tyreRecordJSON);
-
-if (carRecord === tyreRecordJSON){
-    var tyreR = carsTyres[i].tyre_measure;
-    console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
-    var h5 = document.createElement('h5');
-    h5.textContent = "Your tyre fit : " +tyreR;
-    container.appendChild(h5);
-    };
-}}
+function noRecord(record){
+        console.log(record); if (record === 0){
+        var par = document.createElement('p');
+        par.textContent = "Unfortunately, we were not able to find the tyre grade matching your selection. Please contact your local service shop.";
+        container.appendChild(par);
+        
+        }
+};
 
 entryForm.addEventListener("submit", getCarName);
 btnSearchTyre.addEventListener("click", getCarName);
