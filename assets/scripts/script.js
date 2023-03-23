@@ -28,12 +28,12 @@ var getCarName = function(event){
         formRecord.push(carName, carModel, carYear);
         tyreRecord.push(carsTyres[i].make, carsTyres[i].model, carsTyres[i].year);
 
-        let carRecord = JSON.stringify(formRecord);
-        let tyreRecordJSON = JSON.stringify(tyreRecord);
+        let carRecord = JSON.stringify(formRecord).toLowerCase();
+        let tyreRecordJSON = JSON.stringify(tyreRecord).toLowerCase();
 
         if (carRecord === tyreRecordJSON){
         var tyreR = carsTyres[i].tyre_measure;
-        record = record+1;
+        record = 1;
         //console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
         var h5 = document.createElement('h5');
         h5.textContent = "Your tyre fit : " +tyreR;

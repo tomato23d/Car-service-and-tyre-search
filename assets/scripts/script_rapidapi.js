@@ -37,4 +37,4 @@ const options = {
 } 
      
 
-showData.addEventListener('click', getApi);
+//showData.addEventListener('click', getApi);
