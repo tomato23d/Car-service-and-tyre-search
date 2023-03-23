@@ -6,6 +6,7 @@ var entryCarMake = document.getElementById("input_make");
 var entryCarModel = document.getElementById("input_model");
 var entryCarYear = document.getElementById("input_year");
 
+var publishMessage = document.getElementById("h5par");
 
 // var btnCarMake = document.getElementById("btn_make");
 // var btnCarMake = document.getElementById("btn_model");
@@ -13,6 +14,7 @@ var entryCarYear = document.getElementById("input_year");
 
 var getCarName = function(event){
     event.preventDefault();
+    clearSearch();
     var record = 0;
     for (var i=0; i < carsTyres.length; i++){
 
@@ -35,7 +37,8 @@ var getCarName = function(event){
         //console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
         var h5 = document.createElement('h5');
         h5.textContent = "Your tyre fit : " +tyreR;
-        container.appendChild(h5); 
+        //container.appendChild(h5); 
+        publishMessage.appendChild(h5);
         //console.log(record);
         }  
     }  
@@ -47,10 +50,16 @@ function noRecord(record){
         console.log(record); if (record === 0){
         var par = document.createElement('p');
         par.textContent = "Unfortunately, we were not able to find the tyre grade matching your selection. Please contact your local service shop.";
-        container.appendChild(par);
+       // container.appendChild(par);
+       publishMessage.appendChild(par);
         
         }
 };
+
+function clearSearch(){
+    publishMessage.textContent = " "; 
+   // entryCarMake = " ";
+}
 
 entryForm.addEventListener("submit", getCarName);
 btnSearchTyre.addEventListener("click", getCarName);
