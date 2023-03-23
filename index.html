@@ -11,62 +11,41 @@
   </head>
   <body>
    
-        <header> 
-    
-            <h5>Project work</h5>
-            <p> </p>
-            <p> </p>
-        
-        </header>  
+        <header></header>  
 
-        <main class = "flex-row">  
+  <main class = "flex-row">  
         
-          <div class = "buttons_center">
-          <button class = "btn btn-danger" id = "fetch-api">
-            Search tyre fit
-          </button>
-          <br>
-        
-          <div class="card">
-            <h3 class="card-header text-uppercase">Make</h3>
-            <form id="entry_form" class="card-body">
+              <div class = "buttons_center">
+                <button class = "btn btn-danger" id = "search-tyre">
+                 Search tyre fit
+                </button>
           
-              <input type = "text" placeholder  = "car make" id = "input_make"/>
-              <button type="submit" class="btn"   id = "btn_make" >Car Make</button>
-
-              <input type = "text" placeholder  = "car model" id = "input_model"/>
-              <button type="submit" class="btn"  id = "btn_model" >Model</button>
-
-              <input type = "text" placeholder  = "car year of manufacture" id = "input_year"/>
-              <button type="submit" class="btn"  id = "btn_year" >Year</button>
-
-
-
-             <!-- <label class="form-label" for="username">Year</label>
-              <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-              <button type="submit" class="btn">Get User</button>-->
-
-            </form>
-          </div>
-  
-
-        </div>
-
-  <!--        <table class = table>
-          <th>
-              <p class="my-4">Results</p>
-          </th>
-          <tbody id="fetch-results" class = "text-center"></tbody>
-          </table>
-          <br>
         
-         <section id = "container" class = "text-center">  </section> -->
+              <div class="card">
+                  <section id = "container" class = "card-header text-uppercase"> 
+                     <h3 class="card-header text-uppercase">Project work </h3> </section>
+                  <form id="entry_form" class="card-body">
+          
+                      <label class="form-label" >Car Make : </label>
+                      <input type = "text" placeholder  = "car make" id = "input_make"/>
+                     <!-- <button type="submit" class="btn"   id = "btn_make" >Car Make</button> -->
 
-         <script src = "./assets/scripts/tyre_array.js"></script>
-         <script src = "./assets/scripts/script.js"></script>
-       <!--   fetch for car body data - to do - unwrap from hierarchy
-      <script src = "./assets/scripts/script_2.js"></script>-->
+                      <label class="form-label" >Car Model : </label>
+                      <input type = "text" placeholder  = "car model" id = "input_model"/>
+                    <!--   <button type="submit" class="btn"  id = "btn_model" >Model</button>-->
+
+                      <label class="form-label" >Car Year : </label>
+                      <input type = "text" placeholder  = "car year of manufacture" id = "input_year"/>
+                   <!--    <button type="submit" class="btn"  id = "btn_year" >Year</button>-->
+
+                  </form>
+              </div>
+                    
+             </div>
+       <script src = "./assets/scripts/tyre_array.js"></script>
+       <script src = "./assets/scripts/script.js"></script>
+  <!-- <script src = "./assets/scripts/script_rapidapi.js"></script>-->
             
-      </main>
+  </main>
     </body>
 </html>      

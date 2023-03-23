@@ -1,8 +1,3 @@
-var showData = document.getElementById("fetch-api");
-var tableBody = document.getElementById("fetch-results");
-var container = document.getElementById("container");
-
-//const gallery = [];
 
 const myMVE = [];
 
@@ -15,18 +10,18 @@ const options = {
 		'X-RapidAPI-Key': '0bbb66a4edmsh6571cc8b8615294p1e0c41jsnb401a5d2aef0',
 		'X-RapidAPI-Host': 'car-api2.p.rapidapi.com'
 	    },
-   // body: JSON.stringify(data)
+  
         };
 
 
     fetch(requestUrl, options)
 	.then(response => response.json())
- 
-	.then(function(data){console.log(data)})
+    
+	.then(function(collection){console.log(collection)})
 	.catch(err => console.error(err));
 
-   const myMVE1 = myMVE.concat(data);
-   console.log(myMVE1);
+   //const myMVE1 = myMVE.concat(data);
+  // console.log(myMVE1);
    for (var i=0; i < data.length; i++){
      console.log(data[i])}
    
@@ -40,9 +35,6 @@ const options = {
         container.appendChild(par);
 
 } 
- 
-    //gallery.push(data[i].media[0].medium.uri);
-    //console.log (gallery);
-            
+     
 
 showData.addEventListener('click', getApi);

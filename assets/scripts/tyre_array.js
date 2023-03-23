@@ -23,6 +23,40 @@ const carsTyres = [
   
   },
 
+  { array_id: "003",
+  make: "Hyundai",
+  model: "I30" ,
+  year: 2021,
+  series:  "4D HATCH - 6SP AUTO 2.0L 4CYL PETROL",
+  tyre_measure: "205/55R16 94V",
+  tyre_brand: ["KUMHO Tyres", "DIAMONDBACK", "CONTINENTAL Tyres"],
+  average_price: "200",
+
+},
+
+{ array_id: "004",
+make: "Toyota",
+model: "Camry" ,
+year: 2018,
+series:  "ASCENT 4D SEDAN - 6SP AUTO 2.5L 4CYL PETROL",
+tyre_measure: "215/55R17 94W",
+tyre_brand: ["KUMHO Tyres", "Viking", "CONTINENTAL Tyres"],
+average_price: "200",
+
+},
+
+{ array_id: "005",
+make: "Subaru",
+model: "WRX" ,
+year: 2023,
+series:  "4D SEDAN - 6SP MAN 2.4L FLAT4 T/PETROL",
+tyre_measure: "245/40R18 97Y",
+tyre_brand: ["KUMHO Tyres", "Viking", "CONTINENTAL Tyres"],
+average_price: "200",
+
+},
+
+
 ]
 
 

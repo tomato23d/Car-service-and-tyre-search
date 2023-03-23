@@ -1,98 +1,50 @@
-var showTitle = document.getElementById("fetch-api");
-//var tableBody = document.getElementById("fetch-results");
-//var container = document.getElementById("container");
-
+var btnSearchTyre = document.getElementById("search-tyre");
+var container = document.getElementById("container");
 var entryForm = document.getElementById("entry_form");
 
 var entryCarMake = document.getElementById("input_make");
-var btnCarMake = document.getElementById("btn_make");
-
 var entryCarModel = document.getElementById("input_model");
-var btnCarMake = document.getElementById("btn_model");
-
 var entryCarYear = document.getElementById("input_year");
-var btnCarMake = document.getElementById("btn_year");
 
 
-var getImportMake = "vegies";
-var getImportModel = "sun";
-var getImportYear = "2020";
-
-
-
-const gallery = [];
+// var btnCarMake = document.getElementById("btn_make");
+// var btnCarMake = document.getElementById("btn_model");
+// var btnCarMake = document.getElementById("btn_year");
 
 var getCarName = function(event){
 event.preventDefault();
+
+for (var i=0; i < carsTyres.length; i++){
+
 var carName = entryCarMake.value.trim();
 var carModel = entryCarModel.value.trim();
-var carYear = entryCarYear.value.trim();
+var carYear = Number(entryCarYear.value.trim());
 
-if (carName === getImportMake || carModel === getImportModel){
-    console.log("yes")}
-else {alert('Please enter a valid vegies')}
-}
+const formRecord = [];
+const tyreRecord = [];
+
+formRecord.push(carName, carModel, carYear);
+tyreRecord.push(carsTyres[i].make, carsTyres[i].model, carsTyres[i].year);
 
 
-//btnCarMake.addEventListener("click", getCarName);
+let carRecord = JSON.stringify(formRecord);
+let tyreRecordJSON = JSON.stringify(tyreRecord);
+//console.log(carRecord);
+
+//console.log(tyreRecordJSON);
+
+if (carRecord === tyreRecordJSON){
+    var tyreR = carsTyres[i].tyre_measure;
+    console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
+    var h5 = document.createElement('h5');
+    h5.textContent = "Your tyre fit : " +tyreR;
+    container.appendChild(h5);
+    };
+}}
+
 entryForm.addEventListener("submit", getCarName);
+btnSearchTyre.addEventListener("click", getCarName);
 
 
-fetch('http://127.0.0.1:5501/assets/scripts/tyres.json')
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data)});
-        
-        
-    function getApi(){
-    var requestUrl = 'https://api.github.com/users/tomato23d/repos'
-
-
-fetch(requestUrl)
-
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data)
-        for (var i=0; i < data.length; i++){
-            var createTableRow = document.createElement('tr');
-            var tableData = document.createElement('td');
-            var link = document.createElement('a');
-
-           link.textContent = data[i].html_url;
-           link.href = data[i].html_url;
-
-           //link.textContent = data[i].displayTitle;
-           //link.href = data[i].media[0].medium.uri;
+    
            
-           //gallery.push(data[i].media[0].medium.uri);
-           //console.log (gallery);
-            
-
-            tableData.appendChild(link);
-            createTableRow.appendChild(tableData);
-            tableBody.appendChild(createTableRow);
-
-            //var h5 = document.createElement('h5');
-            //var par = document.createElement('p');
-
-           // h5.textContent = data[i].category;
-           // par.textContent = data[i].collectionNames;
-
-            //container.appendChild(h5);
-           // container.appendChild(par);
-
-         
-        }
-    });
-}
-
-
-
-
-showTitle.addEventListener('click', getApi);
-
-//showImage.addEventListener('click', getApiImage);
