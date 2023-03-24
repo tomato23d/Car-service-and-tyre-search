@@ -5,7 +5,7 @@ const myMVE = [];
 function getApi(){
 var requestUrl = 'https://car-api2.p.rapidapi.com/api/bodies?sort=id&verbose=yes&direction=asc'
 
-const options = {
+const api = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '0bbb66a4edmsh6571cc8b8615294p1e0c41jsnb401a5d2aef0',
@@ -20,6 +20,13 @@ const options = {
     
 	.then(function(collection){console.log(collection)})
 	.catch(err => console.error(err));
+
+
+
+
+
+
+
 
    //const myMVE1 = myMVE.concat(data);
   // console.log(myMVE1);

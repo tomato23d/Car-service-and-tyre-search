@@ -37,7 +37,6 @@ var getCarName = function(event){
         //console.log("yes, your tyre: "+ carsTyres[i].tyre_measure);
         var h5 = document.createElement('h5');
         h5.textContent = "Your tyre fit : " +tyreR;
-        //container.appendChild(h5); 
         publishMessage.appendChild(h5);
         //console.log(record);
         }  
@@ -50,15 +49,14 @@ function noRecord(record){
         console.log(record); if (record === 0){
         var par = document.createElement('p');
         par.textContent = "Unfortunately, we were not able to find the tyre grade matching your selection. Please contact your local service shop.";
-       // container.appendChild(par);
-       publishMessage.appendChild(par);
+        publishMessage.appendChild(par);
         
         }
 };
 
 function clearSearch(){
     publishMessage.textContent = " "; 
-   // entryCarMake = " ";
+   
 }
 
 entryForm.addEventListener("submit", getCarName);
