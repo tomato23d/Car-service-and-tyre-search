@@ -18,22 +18,29 @@ const options = {
     fetch(requestUrl, options)
 	.then(response => response.json())
     
-	.then(function(collection){console.log(collection)})
+	.then(function(collection)
+    {console.log("collection1",collection)
+
+    console.log("collection2", collection)
+    for (var i=0; i < collection.length; i++){
+      console.log(collection[i])}
+    
+         var h5 = document.createElement('h5');
+         var par = document.createElement('p');
+ 
+         h5.textContent = collection.data[i].cargo_capacity;
+         par.textContent = collection.data[i].wheel_base;
+ 
+         container.appendChild(h5);
+         container.appendChild(par);
+}
+    )
 	.catch(err => console.error(err));
 
    //const myMVE1 = myMVE.concat(data);
   // console.log(myMVE1);
-   for (var i=0; i < data.length; i++){
-     console.log(data[i])}
-   
-        var h5 = document.createElement('h5');
-        var par = document.createElement('p');
 
-        h5.textContent = collection.data[i].cargo_capacity;
-        par.textContent = collection.data[i].wheel_base;
-
-        container.appendChild(h5);
-        container.appendChild(par);
+console.log("collection3", collection)
 
 } 
      
