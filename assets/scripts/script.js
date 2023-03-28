@@ -56,6 +56,9 @@ function noRecord(record){
 
 function clearSearch(){
     publishMessage.textContent = " "; 
+    //entryCarMake.value = " ";
+    //entryCarModel.value = " ";
+    //entryCarYear.value = " ";
    
 }
 
